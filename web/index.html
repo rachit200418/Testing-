@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Assistant QA Platform - Clinic Appointment Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 data-testid="header-title">Clinic Appointment Voice Assistant</h1>
+            <p data-testid="header-subtitle">Book, cancel, or reschedule appointments with voice</p>
+        </header>
+
+        <div class="status-bar" data-testid="status-bar">
+            <span class="status-indicator" data-testid="status-indicator"></span>
+            <span data-testid="status-text">Ready</span>
+        </div>
+
+        <div class="error-banner" data-testid="error-banner" role="alert" aria-live="polite"></div>
+
+        <main>
+            <section class="recording-section">
+                <div class="recorder-controls">
+                    <button
+                        id="record-btn"
+                        class="btn btn-primary btn-large"
+                        data-testid="record-button"
+                        aria-label="Start recording"
+                        disabled>
+                        <span class="btn-icon" aria-hidden="true">🎤</span>
+                        <span data-testid="record-btn-text">Start Recording</span>
+                    </button>
+                    <button
+                        id="stop-btn"
+                        class="btn btn-danger btn-large"
+                        data-testid="stop-button"
+                        aria-label="Stop recording"
+                        disabled
+                        style="display: none;">
+                        <span class="btn-icon" aria-hidden="true">⏹️</span>
+                        <span data-testid="stop-btn-text">Stop Recording</span>
+                    </button>
+                </div>
+
+                <div class="audio-visualizer" data-testid="audio-visualizer" aria-hidden="true">
+                    <canvas id="waveform-canvas"></canvas>
+                </div>
+
+                <div class="transcript-box" data-testid="transcript-box">
+                    <label for="transcript" class="visually-hidden">Transcript</label>
+                    <textarea
+                        id="transcript"
+                        data-testid="transcript-text"
+                        readonly
+                        placeholder="Your transcript will appear here..."></textarea>
+                </div>
+            </section>
+
+            <section class="chat-section">
+                <h2 data-testid="chat-history-heading">Conversation</h2>
+                <div class="chat-history" data-testid="chat-history" role="log" aria-live="polite" aria-label="Conversation history">
+                    <div class="chat-message welcome" data-testid="welcome-message">
+                        <div class="message-avatar bot" aria-hidden="true">🤖</div>
+                        <div class="message-content">
+                            <div class="message-sender" data-testid="welcome-sender">Assistant</div>
+                            <div class="message-text" data-testid="welcome-text">Hello! I'm your clinic appointment assistant. Click the microphone button and speak to book, cancel, or reschedule appointments, or ask me about the clinic.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p data-testid="footer-text">Voice Assistant QA Platform - Demo Mode</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

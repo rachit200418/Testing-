@@ -1,0 +1,23 @@
+# Terraform variables for Voice Assistant QA Platform
+
+# Required variables
+aws_region = "us-east-1"
+environment = "dev"
+account_id = "123456789012"
+
+# Optional: Custom S3 bucket name (defaults to voice-assistant-qa-{env}-{account})
+# s3_bucket_name = ""
+
+# GitHub repository for OIDC (format: org/repo)
+github_repo = "your-org/voice-assistant-qa"
+
+# Alerting
+alert_email = "your-email@example.com"
+slack_webhook_url = ""  # Set via GitHub Secrets or SSM
+
+# API Keys (set via GitHub Secrets or SSM Parameter Store)
+api_key = ""           # Service API key
+openai_api_key = ""    # OpenAI API key for real LLM eval
+
+# Lambda layer (create with: pip install -t python/ -r requirements.txt && zip -r lambda_layer.zip python/)
+# lambda_layer_zip = "lambda_layer.zip"

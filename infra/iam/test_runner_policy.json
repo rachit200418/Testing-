@@ -1,0 +1,66 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "S3ReadDatasets",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::voice-assistant-qa-*",
+                "arn:aws:s3:::voice-assistant-qa-*/*"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "s3:prefix": ["datasets/", "golden/"]
+                }
+            }
+        },
+        {
+            "Sid": "S3WriteLogsReports",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": [
+                "arn:aws:s3:::voice-assistant-qa-*/logs/*",
+                "arn:aws:s3:::voice-assistant-qa-*/reports/*",
+                "arn:aws:s3:::voice-assistant-qa-*/eval/*"
+            ]
+        },
+        {
+            "Sid": "CloudWatchMetrics",
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:PutMetricData"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "cloudwatch:namespace": "VoiceAssistantQA"
+                }
+            }
+        },
+        {
+            "Sid": "LambdaInvoke",
+            "Effect": "Allow",
+            "Action": [
+                "lambda:InvokeFunction"
+            ],
+            "Resource": "arn:aws:lambda:*:*:function:voice-assistant-qa-*"
+        },
+        {
+            "Sid": "SecretsManagerRead",
+            "Effect": "Allow",
+            "Action": [
+                "secretsmanager:GetSecretValue"
+            ],
+            "Resource": [
+                "arn:aws:secretsmanager:*:*:secret:voice-assistant-qa/*"
+            ]
+        }
+    ]
+}

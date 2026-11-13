@@ -1,0 +1,240 @@
+{
+    "widgets": [
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 0,
+            "width": 12,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    ["VoiceAssistantQA", "P95Latency", "Endpoint", "/text/chat"],
+                    [".", "P95Latency", "Endpoint", "/audio/chat"],
+                    [".", "P95Latency", "Endpoint", "/slots"]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "us-east-1",
+                "title": "P95 Latency by Endpoint",
+                "period": 300,
+                "stat": "Maximum",
+                "yAxis": {
+                    "left": {
+                        "label": "Milliseconds",
+                        "min": 0
+                    }
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 12,
+            "y": 0,
+            "width": 12,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    ["VoiceAssistantQA", "ErrorRate", "Endpoint", "/text/chat"],
+                    [".", "ErrorRate", "Endpoint", "/audio/chat"],
+                    [".", "ErrorRate", "Endpoint", "/slots"]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "us-east-1",
+                "title": "Error Rate by Endpoint",
+                "period": 300,
+                "stat": "Average",
+                "yAxis": {
+                    "left": {
+                        "label": "Error Rate",
+                        "min": 0,
+                        "max": 1
+                    }
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 6,
+            "width": 12,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    ["VoiceAssistantQA", "HallucinationScore", "Model", "gpt-4o-mini"],
+                    [".", "FaithfulnessScore", "Model", "gpt-4o-mini"],
+                    [".", "RelevancyScore", "Model", "gpt-4o-mini"]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "us-east-1",
+                "title": "LLM Quality Metrics (Nightly)",
+                "period": 86400,
+                "stat": "Average",
+                "yAxis": {
+                    "left": {
+                        "label": "Score",
+                        "min": 0,
+                        "max": 1
+                    }
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 12,
+            "y": 6,
+            "width": 12,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    ["VoiceAssistantQA", "ConfirmationRate"],
+                    [".", "RefusalRate"],
+                    [".", "PiiMaskingRate"]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "us-east-1",
+                "title": "Safety Metrics (Nightly)",
+                "period": 86400,
+                "stat": "Average",
+                "yAxis": {
+                    "left": {
+                        "label": "Rate",
+                        "min": 0,
+                        "max": 1
+                    }
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 12,
+            "width": 12,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    ["VoiceAssistantQA", "WER", "Adapter", "faster-whisper", "Slice", "clean"],
+                    [".", "WER", "Adapter", "faster-whisper", "Slice", "noisy"],
+                    [".", "WER", "Adapter", "mock-stt", "Slice", "clean"]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "us-east-1",
+                "title": "STT Word Error Rate by Slice",
+                "period": 86400,
+                "stat": "Average",
+                "yAxis": {
+                    "left": {
+                        "label": "WER",
+                        "min": 0,
+                        "max": 1
+                    }
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 12,
+            "y": 12,
+            "width": 12,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    ["VoiceAssistantQA", "CostPerRequest", "Model", "gpt-4o-mini"],
+                    [".", "CostPerRequest", "Model", "gemini-1.5-flash"]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "us-east-1",
+                "title": "Cost Per Request by Model",
+                "period": 86400,
+                "stat": "Average",
+                "yAxis": {
+                    "left": {
+                        "label": "USD",
+                        "min": 0
+                    }
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 18,
+            "width": 24,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    ["VoiceAssistantQA", "STTLatency", "Adapter", "faster-whisper"],
+                    [".", "LLMLatency", "Model", "gpt-4o-mini"],
+                    [".", "TTSLatency", "Adapter", "edge-tts"]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "us-east-1",
+                "title": "Per-Stage Latency Breakdown (P95)",
+                "period": 300,
+                "stat": "Maximum",
+                "yAxis": {
+                    "left": {
+                        "label": "Milliseconds",
+                        "min": 0
+                    }
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 24,
+            "width": 12,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    ["VoiceAssistantQA", "IntentAccuracy"],
+                    [".", "SlotAccuracy"]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "us-east-1",
+                "title": "Intent & Slot Accuracy (Nightly)",
+                "period": 86400,
+                "stat": "Average",
+                "yAxis": {
+                    "left": {
+                        "label": "Accuracy",
+                        "min": 0,
+                        "max": 1
+                    }
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 12,
+            "y": 24,
+            "width": 12,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    ["VoiceAssistantQA", "ThroughputRPS", "Endpoint", "/text/chat"],
+                    [".", "ThroughputRPS", "Endpoint", "/audio/chat"]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "us-east-1",
+                "title": "Throughput (RPS)",
+                "period": 300,
+                "stat": "Average",
+                "yAxis": {
+                    "left": {
+                        "label": "Requests/Second",
+                        "min": 0
+                    }
+                }
+            }
+        }
+    ]
+}

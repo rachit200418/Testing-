@@ -1,0 +1,16 @@
+{
+  "name": "voice-assistant-qa-promptfoo",
+  "version": "0.1.0",
+  "description": "Prompt regression testing for Voice Assistant QA Platform",
+  "private": true,
+  "scripts": {
+    "test": "promptfoo eval -c promptfooconfig.yaml",
+    "view": "promptfoo view"
+  },
+  "devDependencies": {
+    "promptfoo": "^0.75.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

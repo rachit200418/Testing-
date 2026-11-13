@@ -1,0 +1,152 @@
+[
+  {
+    "id": "faq_001",
+    "question": "What are the clinic timings?",
+    "answer": "The clinic is open Monday to Saturday from 9:00 AM to 7:00 PM. Sunday is closed.",
+    "category": "timings"
+  },
+  {
+    "id": "faq_002",
+    "question": "Is the clinic open on Sundays?",
+    "answer": "No, the clinic is closed on Sundays.",
+    "category": "timings"
+  },
+  {
+    "id": "faq_003",
+    "question": "What are the consultation fees?",
+    "answer": "General consultation fee is ₹500. Specialist consultation is ₹800. Follow-up within 7 days is ₹300.",
+    "category": "fees"
+  },
+  {
+    "id": "faq_004",
+    "question": "What payment methods are accepted?",
+    "answer": "We accept cash, UPI (Google Pay, PhonePe, Paytm), credit/debit cards, and net banking.",
+    "category": "fees"
+  },
+  {
+    "id": "faq_005",
+    "question": "Can I pay by insurance?",
+    "answer": "Yes, we accept major insurance providers including Star Health, Max Bupa, HDFC ERGO, and ICICI Lombard. Please carry your insurance card and ID.",
+    "category": "insurance"
+  },
+  {
+    "id": "faq_006",
+    "question": "What is the cancellation policy?",
+    "answer": "Cancellations made more than 24 hours before the appointment are free. Cancellations within 24 hours incur a ₹200 fee. No-shows are charged the full consultation fee.",
+    "category": "cancellation"
+  },
+  {
+    "id": "faq_007",
+    "question": "Can I reschedule my appointment?",
+    "answer": "Yes, you can reschedule up to 2 hours before your appointment at no extra cost. Rescheduling within 2 hours incurs a ₹100 fee.",
+    "category": "cancellation"
+  },
+  {
+    "id": "faq_008",
+    "question": "What documents should I bring for my first visit?",
+    "answer": "Please bring a valid photo ID (Aadhaar, PAN, or driving license), any previous medical records, prescription lists, and your insurance card if applicable.",
+    "category": "documents"
+  },
+  {
+    "id": "faq_009",
+    "question": "Where is the clinic located?",
+    "answer": "The clinic is at 42 MG Road, near Metro Station Gate 3, Bengaluru 560001. Landmark: Opposite Big Bazaar.",
+    "category": "location"
+  },
+  {
+    "id": "faq_010",
+    "question": "Is parking available?",
+    "answer": "Yes, free basement parking for 20 cars. Two-wheeler parking at the front entrance.",
+    "category": "location"
+  },
+  {
+    "id": "faq_011",
+    "question": "What is the clinic phone number?",
+    "answer": "You can reach us at +91-80-4123-4567 or WhatsApp at +91-98765-43210.",
+    "category": "contact"
+  },
+  {
+    "id": "faq_012",
+    "question": "Do you have a pediatrician?",
+    "answer": "Yes, Dr. Priya Sharma (MBBS, MD Pediatrics) is available Tuesday, Thursday, and Saturday from 10 AM to 2 PM.",
+    "category": "specialists"
+  },
+  {
+    "id": "faq_013",
+    "question": "Do you have a gynecologist?",
+    "answer": "Yes, Dr. Anjali Mehta (MBBS, MS Obstetrics & Gynecology) is available Monday, Wednesday, Friday from 11 AM to 3 PM.",
+    "category": "specialists"
+  },
+  {
+    "id": "faq_014",
+    "question": "Do you have a cardiologist?",
+    "answer": "Yes, Dr. Rajesh Kumar (MBBS, MD Cardiology) is available Monday and Thursday from 4 PM to 7 PM.",
+    "category": "specialists"
+  },
+  {
+    "id": "faq_015",
+    "question": "Can I book an appointment for someone else?",
+    "answer": "Yes, you can book for a family member. Provide their name, age, and contact number during booking.",
+    "category": "booking"
+  },
+  {
+    "id": "faq_016",
+    "question": "How early should I arrive for my appointment?",
+    "answer": "Please arrive 15 minutes before your scheduled time for registration and vitals check.",
+    "category": "booking"
+  },
+  {
+    "id": "faq_017",
+    "question": "Do you provide home sample collection for lab tests?",
+    "answer": "Yes, home collection is available for blood tests within 10 km radius. Charges: ₹200 extra. Book at least 24 hours in advance.",
+    "category": "services"
+  },
+  {
+    "id": "faq_018",
+    "question": "Is there a pharmacy at the clinic?",
+    "answer": "Yes, a 24-hour pharmacy is available on the ground floor. Most prescribed medicines are in stock.",
+    "category": "services"
+  },
+  {
+    "id": "faq_019",
+    "question": "Can I get a medical certificate for work/school?",
+    "answer": "Yes, the doctor can issue a medical certificate after consultation. There is no extra charge for this.",
+    "category": "services"
+  },
+  {
+    "id": "faq_020",
+    "question": "Do you offer teleconsultation?",
+    "answer": "Yes, video consultation is available for follow-ups only. Fee is ₹400. Not available for first-time visits.",
+    "category": "services"
+  },
+  {
+    "id": "faq_021",
+    "question": "What is the fee for a pediatric consultation?",
+    "answer": "Pediatric consultation with Dr. Priya Sharma is ₹800 (specialist rate). Follow-up within 7 days is ₹400.",
+    "category": "fees"
+  },
+  {
+    "id": "faq_022",
+    "question": "Are there any discounts for senior citizens?",
+    "answer": "Yes, senior citizens (60+) get 10% discount on consultation fees. Valid ID proof required.",
+    "category": "fees"
+  },
+  {
+    "id": "faq_023",
+    "question": "Can I get a refund if I cancel?",
+    "answer": "Refunds are processed within 5-7 working days to the original payment mode. The ₹200 cancellation fee (if applicable) is deducted.",
+    "category": "cancellation"
+  },
+  {
+    "id": "faq_024",
+    "question": "Is the clinic wheelchair accessible?",
+    "answer": "Yes, the clinic has ramp access at the main entrance, elevator to all floors, and accessible restrooms.",
+    "category": "location"
+  },
+  {
+    "id": "faq_025",
+    "question": "Do you accept Ayushman Bharat card?",
+    "answer": "Yes, we are empaneled under Ayushman Bharat PM-JAY. Cashless treatment available for eligible beneficiaries.",
+    "category": "insurance"
+  }
+]

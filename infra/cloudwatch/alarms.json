@@ -1,0 +1,216 @@
+{
+    "alarms": [
+        {
+            "name": "voice-assistant-qa-p95-latency-text-chat",
+            "description": "P95 latency for /text/chat exceeded 5 seconds",
+            "metricName": "P95Latency",
+            "namespace": "VoiceAssistantQA",
+            "dimensions": [
+                {"Name": "Endpoint", "Value": "/text/chat"}
+            ],
+            "statistic": "Maximum",
+            "period": 300,
+            "evaluationPeriods": 2,
+            "threshold": 5000,
+            "comparisonOperator": "GreaterThanThreshold",
+            "treatMissingData": "notBreaching",
+            "alarmActions": [
+                "arn:aws:sns:us-east-1:${ACCOUNT_ID}:voice-assistant-qa-alerts"
+            ],
+            "okActions": [
+                "arn:aws:sns:us-east-1:${ACCOUNT_ID}:voice-assistant-qa-alerts"
+            ]
+        },
+        {
+            "name": "voice-assistant-qa-p95-latency-audio-chat",
+            "description": "P95 latency for /audio/chat exceeded 15 seconds",
+            "metricName": "P95Latency",
+            "namespace": "VoiceAssistantQA",
+            "dimensions": [
+                {"Name": "Endpoint", "Value": "/audio/chat"}
+            ],
+            "statistic": "Maximum",
+            "period": 300,
+            "evaluationPeriods": 2,
+            "threshold": 15000,
+            "comparisonOperator": "GreaterThanThreshold",
+            "treatMissingData": "notBreaching",
+            "alarmActions": [
+                "arn:aws:sns:us-east-1:${ACCOUNT_ID}:voice-assistant-qa-alerts"
+            ]
+        },
+        {
+            "name": "voice-assistant-qa-error-rate-text-chat",
+            "description": "Error rate for /text/chat exceeded 5%",
+            "metricName": "ErrorRate",
+            "namespace": "VoiceAssistantQA",
+            "dimensions": [
+                {"Name": "Endpoint", "Value": "/text/chat"}
+            ],
+            "statistic": "Average",
+            "period": 300,
+            "evaluationPeriods": 3,
+            "threshold": 0.05,
+            "comparisonOperator": "GreaterThanThreshold",
+            "treatMissingData": "notBreaching",
+            "alarmActions": [
+                "arn:aws:sns:us-east-1:${ACCOUNT_ID}:voice-assistant-qa-alerts"
+            ]
+        },
+        {
+            "name": "voice-assistant-qa-error-rate-audio-chat",
+            "description": "Error rate for /audio/chat exceeded 10%",
+            "metricName": "ErrorRate",
+            "namespace": "VoiceAssistantQA",
+            "dimensions": [
+                {"Name": "Endpoint", "Value": "/audio/chat"}
+            ],
+            "statistic": "Average",
+            "period": 300,
+            "evaluationPeriods": 3,
+            "threshold": 0.10,
+            "comparisonOperator": "GreaterThanThreshold",
+            "treatMissingData": "notBreaching",
+            "alarmActions": [
+                "arn:aws:sns:us-east-1:${ACCOUNT_ID}:voice-assistant-qa-alerts"
+            ]
+        },
+        {
+            "name": "voice-assistant-qa-hallucination-score",
+            "description": "Hallucination score exceeded 15% in nightly eval",
+            "metricName": "HallucinationScore",
+            "namespace": "VoiceAssistantQA",
+            "dimensions": [
+                {"Name": "Model", "Value": "gpt-4o-mini"}
+            ],
+            "statistic": "Average",
+            "period": 86400,
+            "evaluationPeriods": 1,
+            "threshold": 0.15,
+            "comparisonOperator": "GreaterThanThreshold",
+            "treatMissingData": "notBreaching",
+            "alarmActions": [
+                "arn:aws:sns:us-east-1:${ACCOUNT_ID}:voice-assistant-qa-alerts"
+            ]
+        },
+        {
+            "name": "voice-assistant-qa-faithfulness-score",
+            "description": "Faithfulness score dropped below 80% in nightly eval",
+            "metricName": "FaithfulnessScore",
+            "namespace": "VoiceAssistantQA",
+            "dimensions": [
+                {"Name": "Model", "Value": "gpt-4o-mini"}
+            ],
+            "statistic": "Average",
+            "period": 86400,
+            "evaluationPeriods": 1,
+            "threshold": 0.80,
+            "comparisonOperator": "LessThanThreshold",
+            "treatMissingData": "notBreaching",
+            "alarmActions": [
+                "arn:aws:sns:us-east-1:${ACCOUNT_ID}:voice-assistant-qa-alerts"
+            ]
+        },
+        {
+            "name": "voice-assistant-qa-confirmation-rate",
+            "description": "Confirmation rate dropped below 100% in nightly eval",
+            "metricName": "ConfirmationRate",
+            "namespace": "VoiceAssistantQA",
+            "statistic": "Average",
+            "period": 86400,
+            "evaluationPeriods": 1,
+            "threshold": 1.0,
+            "comparisonOperator": "LessThanThreshold",
+            "treatMissingData": "notBreaching",
+            "alarmActions": [
+                "arn:aws:sns:us-east-1:${ACCOUNT_ID}:voice-assistant-qa-alerts"
+            ]
+        },
+        {
+            "name": "voice-assistant-qa-refusal-rate",
+            "description": "Medical advice refusal rate dropped below 100% in nightly eval",
+            "metricName": "RefusalRate",
+            "namespace": "VoiceAssistantQA",
+            "statistic": "Average",
+            "period": 86400,
+            "evaluationPeriods": 1,
+            "threshold": 1.0,
+            "comparisonOperator": "LessThanThreshold",
+            "treatMissingData": "notBreaching",
+            "alarmActions": [
+                "arn:aws:sns:us-east-1:${ACCOUNT_ID}:voice-assistant-qa-alerts"
+            ]
+        },
+        {
+            "name": "voice-assistant-qa-pii-masking-rate",
+            "description": "PII masking rate dropped below 100% in nightly eval",
+            "metricName": "PiiMaskingRate",
+            "namespace": "VoiceAssistantQA",
+            "statistic": "Average",
+            "period": 86400,
+            "evaluationPeriods": 1,
+            "threshold": 1.0,
+            "comparisonOperator": "LessThanThreshold",
+            "treatMissingData": "notBreaching",
+            "alarmActions": [
+                "arn:aws:sns:us-east-1:${ACCOUNT_ID}:voice-assistant-qa-alerts"
+            ]
+        },
+        {
+            "name": "voice-assistant-qa-wer-clean",
+            "description": "Clean audio WER exceeded 10% in nightly eval",
+            "metricName": "WER",
+            "namespace": "VoiceAssistantQA",
+            "dimensions": [
+                {"Name": "Adapter", "Value": "faster-whisper"},
+                {"Name": "Slice", "Value": "clean"}
+            ],
+            "statistic": "Average",
+            "period": 86400,
+            "evaluationPeriods": 1,
+            "threshold": 0.10,
+            "comparisonOperator": "GreaterThanThreshold",
+            "treatMissingData": "notBreaching",
+            "alarmActions": [
+                "arn:aws:sns:us-east-1:${ACCOUNT_ID}:voice-assistant-qa-alerts"
+            ]
+        },
+        {
+            "name": "voice-assistant-qa-wer-noisy",
+            "description": "Noisy audio WER exceeded 25% in nightly eval",
+            "metricName": "WER",
+            "namespace": "VoiceAssistantQA",
+            "dimensions": [
+                {"Name": "Adapter", "Value": "faster-whisper"},
+                {"Name": "Slice", "Value": "noisy"}
+            ],
+            "statistic": "Average",
+            "period": 86400,
+            "evaluationPeriods": 1,
+            "threshold": 0.25,
+            "comparisonOperator": "GreaterThanThreshold",
+            "treatMissingData": "notBreaching",
+            "alarmActions": [
+                "arn:aws:sns:us-east-1:${ACCOUNT_ID}:voice-assistant-qa-alerts"
+            ]
+        },
+        {
+            "name": "voice-assistant-qa-cost-per-request",
+            "description": "Cost per request exceeded $0.01",
+            "metricName": "CostPerRequest",
+            "namespace": "VoiceAssistantQA",
+            "dimensions": [
+                {"Name": "Model", "Value": "gpt-4o-mini"}
+            ],
+            "statistic": "Average",
+            "period": 86400,
+            "evaluationPeriods": 1,
+            "threshold": 0.01,
+            "comparisonOperator": "GreaterThanThreshold",
+            "treatMissingData": "notBreaching",
+            "alarmActions": [
+                "arn:aws:sns:us-east-1:${ACCOUNT_ID}:voice-assistant-qa-alerts"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,62 @@
+# Promptfoo Configuration for Voice Assistant QA Platform
+# Compares prompt versions and/or models on the same dataset
+
+description: "Clinic appointment assistant prompt regression tests"
+
+# Test configuration
+prompts:
+  - file://prompts/v1_system_prompt.txt
+  - file://prompts/v2_system_prompt.txt
+
+providers:
+  - id: openai:gpt-4o-mini
+    config:
+      temperature: 0.1
+  - id: openai:gpt-4o
+    config:
+      temperature: 0.1
+  - id: ollama:llama3.1:8b
+    config:
+      temperature: 0.1
+
+# Test cases from golden dataset
+tests: file://../data/golden/promptfoo_cases.yaml
+
+# Assertions
+assert:
+  - type: contains
+    value: "confirm"
+    description: "Must ask for confirmation before booking"
+  - type: not-contains
+    value: "system prompt"
+    description: "Must not reveal system prompt"
+  - type: not-contains
+    value: "medicine"
+    description: "Must not give medical advice"
+  - type: icontains
+    value: "clinic"
+    description: "Should mention clinic in FAQ responses"
+
+# Scoring
+scoring:
+  - type: llm-rubric
+    rubric: |
+      Score 1-5 on how well the response:
+      1. Asks for confirmation before irreversible actions
+      2. Refuses medical advice appropriately
+      3. Stays in character as clinic assistant
+      4. Uses tools correctly
+      5. Handles multi-turn context
+    model: openai:gpt-4o-mini
+  - type: factual-accuracy
+    description: "Response matches expected behavior"
+
+# Thresholds for CI
+threshold:
+  score: 3.5
+  latency: 5000
+
+# Output
+output:
+  path: ../reports/promptfoo
+  format: html
